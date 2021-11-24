@@ -1,0 +1,22 @@
+{
+  "name": "node_api_skeleton",
+  "version": "1.0.0",
+  "description": "Basic api skeleton for future apps",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "express",
+    "api"
+  ],
+  "author": "K. Nithish Kumar Nithi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
