@@ -1,7 +1,7 @@
 const express = require('express');
+const config = require('./config');
 const app = express();
-const PORT = 9999;
 
 app.use(require('./routes'));
 
-app.listen(PORT, () => console.log(`App is running on port ${PORT}`));
+app.listen(config.PORT, () => console.log(`App is running on port ${config.PORT}`));
