@@ -14,7 +14,10 @@
   "author": "K. Nithish Kumar Nithi",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "mongodb": "^4.2.0",
+    "npm": "^8.1.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
