@@ -1,4 +1,5 @@
 let dbOps = {};
+dbOps.post = {};
 
 module.exports = dbOps;
 
@@ -16,9 +17,7 @@ dbOps.insert = (dbObj,collectionname,data) => {
         let query = {email : data.email };
         dbObj.collection(collectionname).findOne(query, (err,result) => {
             if (err) reject("Error occurred while finding user");
-            if (result) {
-                reject("User already exist");
-            }
+            if (result) { reject("User already exist"); }
             else {
                 dbObj.collection(collectionname).insertOne(data, (err, result) => {
                     if (err) reject("Error occurred while creating user");
@@ -28,3 +27,14 @@ dbOps.insert = (dbObj,collectionname,data) => {
         })
     })
 }
+
+dbOps.post.create = (dbObj,collectionname,data) => {
+    return new Promise ( ( resolve, reject ) => {
+        dbObj.collection(collectionname).insertOne(data, (err,result) => {
+            if (err) reject("Error while creating post");
+            resolve(result);
+        })
+    })
+}
+
+dbOps.post.getAll = (dbObj,collectionname) => dbOps.getAll(dbObj,collectionname);

@@ -2,6 +2,7 @@ const database = require('../db');
 const dbCollection = require('../db/operations')
 
 let controller = {};
+controller.post = {};
 
 module.exports = controller;
 
@@ -28,4 +29,14 @@ controller.update = (req, res) => {
 
 controller.delete = (req, res) => {
     res.send('delete user');
+}
+
+controller.post.create = (req, res) => {
+    res.send("user post created");
+}
+
+controller.post.getPosts = (req, res) => {
+   dbCollection.post.getAll(db,'posts')
+    .then( (result) => res.status(200).json(result) )
+    .catch ( (err) =>  res.status(500).json({message: err}) ) 
 }
